@@ -34,6 +34,7 @@ Create chart name and version as used by the chart label.
 Common labels
 */}}
 {{- define "podinfo.labels" -}}
+app.kubernetes.io/instance: {{ .Release.Name }}
 helm.sh/chart: {{ include "podinfo.chart" . }}
 {{ include "podinfo.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
